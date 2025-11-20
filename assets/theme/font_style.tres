@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://br457p16ki34w"]
+
+[ext_resource type="FontFile" uid="uid://dwvt3mhlo0c6t" path="res://assets/ttf/Inter-Black.ttf" id="1_lpw4h"]
+
+[resource]
+default_font = ExtResource("1_lpw4h")

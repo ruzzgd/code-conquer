@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=3 uid="uid://hgr54bvuxk7w"]
+
+[ext_resource type="Texture2D" uid="uid://br6algtf1jjsu" path="res://assets/sprites/Projectiles/projectiles x2.png" id="1_g5pa3"]
+[ext_resource type="Script" uid="uid://dv2iwohk6y66k" path="res://scenes/mobs/boss/missilebullet.gd" id="1_n0xiy"]
+[ext_resource type="AudioStream" uid="uid://du01pao50ejvq" path="res://assets/sounds/missile-explosion.ogg" id="3_ibsmt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0xiy"]
+size = Vector2(27, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibsmt"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(0, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17l5i"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(64, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihmc2"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(128, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4j1i"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(192, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0xiy"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(0, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oy38"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(64, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qqah"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(128, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33w58"]
+atlas = ExtResource("1_g5pa3")
+region = Rect2(192, 512, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0oy38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibsmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17l5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihmc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4j1i")
+}],
+"loop": true,
+"name": &"missile_anim",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_n0xiy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0oy38")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_3qqah")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_33w58")
+}],
+"loop": false,
+"name": &"missile_explode_anim",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qqah"]
+size = Vector2(27, 17)
+
+[node name="Missilebullet" type="CharacterBody2D"]
+z_index = 100
+collision_mask = 0
+script = ExtResource("1_n0xiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 1.5)
+shape = SubResource("RectangleShape2D_n0xiy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.5, -18.5)
+scale = Vector2(1.14063, 1.04688)
+sprite_frames = SubResource("SpriteFrames_0oy38")
+animation = &"missile_explode_anim"
+
+[node name="HitDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
+position = Vector2(2.5, 1.5)
+shape = SubResource("RectangleShape2D_3qqah")
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ibsmt")

@@ -1,0 +1,2832 @@
+[gd_scene load_steps=130 format=3 uid="uid://bo7eesj5hn1sq"]
+
+[ext_resource type="Script" uid="uid://dhpew8klfs2r5" path="res://scenes/main_scene/main_scene.gd" id="1_6iw8k"]
+[ext_resource type="Theme" uid="uid://b2ia87ml1evux" path="res://assets/theme/doors_modal.tres" id="3_3t4qf"]
+[ext_resource type="Texture2D" uid="uid://bf8x5i1kvsust" path="res://assets/tilesets/tilesStuff.png" id="3_34m6u"]
+[ext_resource type="Script" uid="uid://d2oe7ej00twfi" path="res://scenes/main_scene/doors_script/debug_ui_first_floor_all_doors.gd" id="4_34m6u"]
+[ext_resource type="Theme" uid="uid://br457p16ki34w" path="res://assets/theme/font_style.tres" id="5_6ycpv"]
+[ext_resource type="Script" uid="uid://ce4efajtm4eto" path="res://scenes/main_scene/ingame_ui_script/ingame_ui.gd" id="5_umvci"]
+[ext_resource type="Script" uid="uid://bokahthqjmn41" path="res://scenes/main_scene/start_screen.gd" id="6_umvci"]
+[ext_resource type="Script" uid="uid://b5cl1y3wxd52d" path="res://scenes/main_scene/doors_script/debug_ui_second_floor_ug_all_doors.gd" id="6_xtklx"]
+[ext_resource type="Script" uid="uid://dtcg0kpqnuxpb" path="res://scenes/main_scene/doors_script/debug_ui_third_floor_ug_all_doors.gd" id="7_nceve"]
+[ext_resource type="Texture2D" uid="uid://fm0doxgwwn4l" path="res://assets/img/settings.png" id="7_s5p1y"]
+[ext_resource type="Texture2D" uid="uid://b8tuks3btbimj" path="res://assets/img/history.png" id="8_3t4qf"]
+[ext_resource type="Script" uid="uid://briwbjku14ee" path="res://scenes/main_scene/chests_debug_ui_script/debug_ui_first_floor_all_chest.gd" id="8_nceve"]
+[ext_resource type="Theme" uid="uid://ba6ts21pbuppy" path="res://assets/theme/my_btn_style.tres" id="9_s5p1y"]
+[ext_resource type="Theme" uid="uid://bbylrddysow5i" path="res://assets/theme/setting_modal.tres" id="9_ugojt"]
+[ext_resource type="Script" uid="uid://cl8s1dmytqfby" path="res://scenes/main_scene/chests_debug_ui_script/debug_ui_second_floor_ug_all_chest.gd" id="9_wuij3"]
+[ext_resource type="Script" uid="uid://ub01xe4nulnr" path="res://scenes/main_scene/chests_debug_ui_script/debug_ui_third_floor_ug_all_chest.gd" id="10_scan6"]
+[ext_resource type="Script" uid="uid://cw4lwirt8ub3n" path="res://scenes/main_scene/escape_door_modal.gd" id="11_fr7fn"]
+[ext_resource type="Script" uid="uid://b5yue1ceel8hl" path="res://scenes/main_scene/ingame_ui_script/player_stat.gd" id="11_nim2u"]
+[ext_resource type="Texture2D" uid="uid://dkjdriadmmqrl" path="res://assets/img/profile.png" id="12_17klg"]
+[ext_resource type="Texture2D" uid="uid://c3tff2ljfkogp" path="res://assets/img/hint.png" id="13_3naof"]
+[ext_resource type="Script" uid="uid://2b5c2louk43v" path="res://scenes/main_scene/ingame_ui_script/bullet_buff_container.gd" id="15_b7qf2"]
+[ext_resource type="Script" uid="uid://01rs0h4amp1w" path="res://scenes/main_scene/info_route.gd" id="15_qgjuk"]
+[ext_resource type="Texture2D" uid="uid://de8lgymlnhc2j" path="res://assets/img/bullet-icon.png" id="16_lt3s2"]
+[ext_resource type="Texture2D" uid="uid://bqr001dm4q8d5" path="res://assets/img/back-arrow.png" id="16_qgjuk"]
+[ext_resource type="Script" uid="uid://c1klf045x1nw0" path="res://scenes/main_scene/note_ui.gd" id="16_rv7a5"]
+[ext_resource type="Texture2D" uid="uid://dyypt2jsp7wio" path="res://assets/img/code-conquer-start-screen.png" id="17_17klg"]
+[ext_resource type="Texture2D" uid="uid://d33jcnoc3p1w6" path="res://assets/buff-icon/double_damage.png" id="19_nceve"]
+[ext_resource type="Texture2D" uid="uid://05ly8a7tvs4k" path="res://assets/buff-icon/triple_damage.png" id="20_wuij3"]
+[ext_resource type="Texture2D" uid="uid://blhhf84wrqfxu" path="res://assets/buff-icon/extra_atk_speed.png" id="21_scan6"]
+[ext_resource type="Texture2D" uid="uid://cptywfipihkmr" path="res://assets/buff-icon/extra_atk_range.png" id="22_cm64g"]
+[ext_resource type="Texture2D" uid="uid://d3rrp1yybj11c" path="res://assets/img/extra-lives-1.png" id="23_c3uee"]
+[ext_resource type="Script" uid="uid://dswosu680xmxm" path="res://scenes/main_scene/core_container.gd" id="25_bo5y2"]
+[ext_resource type="Texture2D" uid="uid://c31fahk6yeulo" path="res://assets/img/green-core.png" id="26_w0eu7"]
+[ext_resource type="Texture2D" uid="uid://buvyeuwlk5vuq" path="res://assets/img/blue-core.png" id="27_bc27i"]
+[ext_resource type="Texture2D" uid="uid://87vea4egynhu" path="res://assets/img/red-core.png" id="28_fr7fn"]
+[ext_resource type="Script" uid="uid://dksvweln4q736" path="res://scenes/main_scene/save_station_ui.gd" id="30_r37pl"]
+[ext_resource type="Script" uid="uid://d4c4h4ol5anht" path="res://scenes/main_scene/sound_system_panel.gd" id="30_y5h3x"]
+[ext_resource type="Texture2D" uid="uid://b86wobeyaqw70" path="res://assets/img/save-icon.png" id="31_sjfcr"]
+[ext_resource type="Script" uid="uid://rrj87tk0kjjj" path="res://scenes/main_scene/fade_transitions.gd" id="32_sjfcr"]
+[ext_resource type="AudioStream" uid="uid://bm21k17h8a3ai" path="res://assets/music/menu_bg_music.ogg" id="33_bj71x"]
+[ext_resource type="VideoStream" uid="uid://cygm6qu07ksdj" path="res://assets/video/menu-bg.ogv" id="33_hwg4y"]
+[ext_resource type="Script" uid="uid://cx1wa65lmp51b" path="res://scenes/main_scene/view_history.gd" id="34_bc27i"]
+[ext_resource type="Shader" uid="uid://fxclt2mqqbih" path="res://scenes/main_scene/main_scene.gdshader" id="35_0ihpr"]
+[ext_resource type="Script" uid="uid://cg80djp21piv6" path="res://scenes/main_scene/view_saved_game_container.gd" id="36_ci57a"]
+[ext_resource type="Script" uid="uid://dv2s8wutw5std" path="res://scenes/main_scene/texture_rect.gd" id="37_jujby"]
+[ext_resource type="Script" uid="uid://ct4b62r81ikf5" path="res://scenes/main_scene/aboutus.gd" id="37_l2r6x"]
+[ext_resource type="Script" uid="uid://dmnok1i55hfwf" path="res://scenes/main_scene/finaly_ui.gd" id="39_c3uee"]
+[ext_resource type="Texture2D" uid="uid://cwpteigij1g7d" path="res://assets/img/teamwork.png" id="41_3kwc0"]
+[ext_resource type="Texture2D" uid="uid://cygo0jd28j4yo" path="res://assets/img/INFO.png" id="42_l5i1m"]
+[ext_resource type="Texture2D" uid="uid://b4m13injs4pyp" path="res://assets/img/INFO2.png" id="43_lm0ts"]
+[ext_resource type="Script" uid="uid://n1tcifeut8ff" path="res://scenes/main_scene/carousel_container.gd" id="43_qtynr"]
+[ext_resource type="VideoStream" uid="uid://bp3bojipefq2r" path="res://assets/video/loading.ogv" id="46_2t6ee"]
+[ext_resource type="Script" uid="uid://dcqe3qeeab27n" path="res://scenes/main_scene/ending.gd" id="49_peuwe"]
+[ext_resource type="AudioStream" uid="uid://bjousfkxp4vyd" path="res://assets/sounds/warning_sound.ogg" id="50_217he"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbdpr"]
+atlas = ExtResource("3_34m6u")
+region = Rect2(516.97, 98.0045, 9.03668, 12.0245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6loks"]
+atlas = ExtResource("3_34m6u")
+region = Rect2(485.028, 98.0107, 9.02661, 12.0043)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3uee"]
+bg_color = Color(0.1736, 0.44408, 0.56, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci57a"]
+bg_color = Color(0, 0, 0, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv7a5"]
+bg_color = Color(0.13, 0.13, 0.13, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5i1m"]
+bg_color = Color(0.25, 0.25, 0.25, 0.917647)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.84, 0.84, 0.84, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17klg"]
+bg_color = Color(0.14, 0.14, 0.14, 0.517647)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sro07"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jbir"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 0.517647)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7633w"]
+bg_color = Color(0.74, 0.621353, 0.1924, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dwww"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtklx"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nceve"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wuij3"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scan6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm64g"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r37pl"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjfcr"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr7fn"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 0.517647)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="GDScript" id="GDScript_hwg4y"]
+script/source = "extends TextureButton
+@onready var tween = get_tree().create_tween()
+
+func _on_mouse_entered():
+	if tween.is_running():
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_property(self, \"scale\", Vector2(1.1, 1.1), 0.15).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+
+func _on_mouse_exited():
+	if tween.is_running():
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_property(self, \"scale\", Vector2(1, 1), 0.15).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jujby"]
+shader = ExtResource("35_0ihpr")
+shader_parameter/glitch_strength = 0.2
+shader_parameter/time_scale = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5h3x"]
+bg_color = Color(0, 0, 0, 0.560784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo5y2"]
+bg_color = Color(0.05, 0.05, 0.05, 0.517647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nthpl"]
+bg_color = Color(0.082761, 0.336345, 0.635115, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dvv1"]
+bg_color = Color(0, 0, 0, 0.619608)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0eu7"]
+bg_color = Color(0, 0, 0, 0.584314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4quil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go0ve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyanc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8kx6"]
+bg_color = Color(0.77, 0.77, 0.77, 0.929412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rl6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aq8fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_baixc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cydf8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtynr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_peuwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66ttw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lrq7u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs1pe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vpuy"]
+bg_color = Color(0.768627, 0.768627, 0.768627, 0.929412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okyg2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fxty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgi7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lx43u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7338"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym6s4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t6ee"]
+bg_color = Color(0, 0, 0, 0.619608)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2r6x"]
+bg_color = Color(0.004019165, 0, 0, 0.6509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtynr"]
+bg_color = Color(0.08259999, 0.4377799, 0.59, 1)
+border_color = Color(0.78, 0.17160001, 0.17160001, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_datfd"]
+bg_color = Color(0, 0.611765, 0.678431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj71x"]
+bg_color = Color(0.0235294, 0.168627, 0.341176, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ihpr"]
+bg_color = Color(0, 0.429, 0.78, 0.568627)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ci57a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv7a5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3uee"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fr7fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc27i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0eu7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dvv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nthpl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo5y2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5h3x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc27i"]
+bg_color = Color(0.091, 0.328417, 0.35, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.850667, 0.88, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jujby"]
+bg_color = Color(0.14, 0.14, 0.14, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwg4y"]
+bg_color = Color(0.87, 0.87, 0.87, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.56, 0.8, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2r6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3kwc0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_217he"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peuwe"]
+bg_color = Color(0.64, 0.64, 0.64, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.560784, 0.8, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm0ts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5i1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t6ee"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwg4y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jujby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ihpr"]
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_6iw8k")
+
+[node name="player_container" type="Node2D" parent="."]
+
+[node name="current_map" type="Node2D" parent="."]
+
+[node name="DoorsChestDebugModal" type="CanvasLayer" parent="."]
+
+[node name="DebugUI-first-floor-all-doors" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_34m6u")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-doors/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DebugUI-second-floor-ug-all-doors" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_xtklx")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DebugUI-third-floor-ug-all-doors" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nceve")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-doors/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DebugUI-first-floor-all-chest" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_nceve")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-first-floor-all-chest/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DebugUI-second-floor-ug-all-chest" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_wuij3")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-second-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DebugUI-third-floor-ug-all-chest" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_scan6")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 67.0
+offset_right = 1067.0
+offset_bottom = 589.0
+theme = ExtResource("3_3t4qf")
+
+[node name="TextEdit" type="TextEdit" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 74.0
+offset_right = 943.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+
+[node name="SubmitButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Submit"
+icon = SubResource("AtlasTexture_kbdpr")
+expand_icon = true
+
+[node name="ClosedButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 429.0
+offset_right = 262.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Close"
+icon = SubResource("AtlasTexture_6loks")
+expand_icon = true
+
+[node name="SkipButton" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 429.0
+offset_right = 943.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 16
+text = "Skip Skill"
+icon = ExtResource("13_3naof")
+expand_icon = true
+
+[node name="ErrorLabel" type="Label" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 945.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorTimer" type="Timer" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+
+[node name="ViewExpectedOutput" type="Button" parent="DoorsChestDebugModal/DebugUI-third-floor-ug-all-chest/Panel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 429.0
+offset_right = 416.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Escape-Door-Modal" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_fr7fn")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/Escape-Door-Modal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -159.0
+offset_right = 248.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c3uee")
+
+[node name="Label" type="Label" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.5
+offset_top = 15.0
+offset_right = 87.5
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "Need 3 Core To Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 56.0
+offset_right = 20.0
+offset_bottom = 79.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="green_core" type="TextureRect" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -50.0
+offset_right = -86.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_w0eu7")
+expand_mode = 1
+
+[node name="blue_core" type="TextureRect" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_bc27i")
+expand_mode = 1
+
+[node name="red_core" type="TextureRect" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -50.0
+offset_right = 182.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_fr7fn")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -78.0
+offset_right = 71.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ci57a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rv7a5")
+text = "Activate"
+
+[node name="back_button" type="TextureButton" parent="DoorsChestDebugModal/Escape-Door-Modal/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture_normal = ExtResource("16_qgjuk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Note-ui" type="Control" parent="DoorsChestDebugModal"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_rv7a5")
+
+[node name="Panel" type="Panel" parent="DoorsChestDebugModal/Note-ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -182.0
+offset_right = 134.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5i1m")
+
+[node name="system_message" type="Label" parent="DoorsChestDebugModal/Note-ui/Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 119.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 12
+text = "System message"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="content" type="Label" parent="DoorsChestDebugModal/Note-ui/Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 247.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(9.04858e-06, 0.740096, 0.922015, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 3
+
+[node name="HTTPRequest" type="HTTPRequest" parent="DoorsChestDebugModal"]
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ingame_ui" type="Control" parent="UIManager"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_6ycpv")
+script = ExtResource("5_umvci")
+
+[node name="ingame_setting" type="TextureButton" parent="UIManager/ingame_ui"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 528.0
+offset_top = -314.0
+offset_right = 568.0
+offset_bottom = -274.0
+texture_normal = ExtResource("7_s5p1y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ingame-setting-modal" type="Panel" parent="UIManager/ingame_ui"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_ugojt")
+
+[node name="resume-btn" type="Button" parent="UIManager/ingame_ui/ingame-setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -130.0
+offset_right = 125.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Resume"
+
+[node name="soundsystem" type="Button" parent="UIManager/ingame_ui/ingame-setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -50.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Audio
+"
+
+[node name="info-btn" type="Button" parent="UIManager/ingame_ui/ingame-setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 31.0
+offset_right = 125.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Info"
+
+[node name="quit-btn" type="Button" parent="UIManager/ingame_ui/ingame-setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 109.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Quit"
+
+[node name="Label" type="Label" parent="UIManager/ingame_ui/ingame-setting-modal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -192.5
+offset_right = 70.5
+offset_bottom = -159.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65, 0.65, 0.65, 1)
+theme_override_colors/font_shadow_color = Color(0.16, 0.16, 0.16, 1)
+theme_override_font_sizes/font_size = 26
+text = "Setting"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="player-stat" type="PanelContainer" parent="UIManager/ingame_ui"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 0
+offset_left = -567.0
+offset_top = -315.0
+offset_right = -213.0
+offset_bottom = -237.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_17klg")
+script = ExtResource("11_nim2u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/ingame_ui/player-stat"]
+layout_mode = 2
+
+[node name="profile" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer"]
+custom_minimum_size = Vector2(60, 70)
+layout_mode = 2
+texture = ExtResource("12_17klg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ingame_ui/player-stat/HBoxContainer"]
+custom_minimum_size = Vector2(290, 70)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="health-bar" type="ProgressBar" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_sro07")
+value = 100.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+
+[node name="extra-lives-container" type="HBoxContainer" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(142.5, 0)
+layout_mode = 2
+
+[node name="heart-1" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/extra-lives-container"]
+layout_mode = 2
+texture = ExtResource("23_c3uee")
+
+[node name="heart-2" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/extra-lives-container"]
+layout_mode = 2
+texture = ExtResource("23_c3uee")
+
+[node name="heart-3" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/extra-lives-container"]
+layout_mode = 2
+texture = ExtResource("23_c3uee")
+
+[node name="hints-container" type="HBoxContainer" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(142.5, 0)
+layout_mode = 2
+
+[node name="hint-1" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/hints-container"]
+layout_mode = 2
+texture = ExtResource("13_3naof")
+
+[node name="hint-2" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/hints-container"]
+layout_mode = 2
+texture = ExtResource("13_3naof")
+
+[node name="hint-3" type="TextureRect" parent="UIManager/ingame_ui/player-stat/HBoxContainer/VBoxContainer/VBoxContainer/hints-container"]
+layout_mode = 2
+texture = ExtResource("13_3naof")
+
+[node name="bullet_buff_container" type="PanelContainer" parent="UIManager/ingame_ui"]
+layout_mode = 0
+offset_left = -202.0
+offset_top = -315.0
+offset_right = 99.0
+offset_bottom = -237.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jbir")
+script = ExtResource("15_b7qf2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/ingame_ui/bullet_buff_container"]
+layout_mode = 2
+
+[node name="bullet-icon" type="TextureRect" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+texture = ExtResource("16_lt3s2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/Control"]
+layout_mode = 0
+offset_right = 237.0
+offset_bottom = 40.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7633w")
+show_percentage = false
+
+[node name="Label" type="Label" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buff_container" type="HBoxContainer" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="double_damage_icon" type="TextureRect" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container"]
+layout_mode = 2
+texture = ExtResource("19_nceve")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container/double_damage_icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4dwww")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xtklx")
+max_value = 1.0
+show_percentage = false
+
+[node name="triple_damage_icon" type="TextureRect" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container"]
+layout_mode = 2
+texture = ExtResource("20_wuij3")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container/triple_damage_icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nceve")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wuij3")
+max_value = 1.0
+show_percentage = false
+
+[node name="increase_atk_speed_icon" type="TextureRect" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container"]
+layout_mode = 2
+texture = ExtResource("21_scan6")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container/increase_atk_speed_icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_scan6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cm64g")
+max_value = 1.0
+show_percentage = false
+
+[node name="increase_atk_range_icon" type="TextureRect" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container"]
+layout_mode = 2
+texture = ExtResource("22_cm64g")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UIManager/ingame_ui/bullet_buff_container/HBoxContainer/VBoxContainer/buff_container/increase_atk_range_icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_r37pl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sjfcr")
+max_value = 1.0
+show_percentage = false
+
+[node name="core_container" type="PanelContainer" parent="UIManager/ingame_ui"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 1
+offset_left = 110.0
+offset_top = -315.0
+offset_right = 313.0
+offset_bottom = -238.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr7fn")
+script = ExtResource("25_bo5y2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/ingame_ui/core_container"]
+layout_mode = 2
+
+[node name="green-core" type="TextureRect" parent="UIManager/ingame_ui/core_container/HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("26_w0eu7")
+expand_mode = 1
+
+[node name="blue-core" type="TextureRect" parent="UIManager/ingame_ui/core_container/HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("27_bc27i")
+expand_mode = 1
+
+[node name="red-core" type="TextureRect" parent="UIManager/ingame_ui/core_container/HBoxContainer"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("28_fr7fn")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="UIManager/ingame_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 467.0
+offset_top = -315.0
+offset_right = 507.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start_screen" type="Control" parent="UIManager"]
+z_index = 900
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = ExtResource("5_6ycpv")
+script = ExtResource("6_umvci")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("33_hwg4y")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="ColorRect" type="ColorRect" parent="UIManager/start_screen"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.160784)
+
+[node name="difficulty-btn" type="OptionButton" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = 49.0
+offset_right = 102.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+alignment = 1
+
+[node name="new-game-btn" type="Button" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.5
+offset_top = -24.5
+offset_right = 104.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "New Game
+"
+
+[node name="exit-btn" type="Button" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = 126.0
+offset_right = 108.5
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Exit"
+
+[node name="setting-btn" type="TextureButton" parent="UIManager/start_screen"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 57.0
+texture_normal = ExtResource("7_s5p1y")
+ignore_texture_size = true
+stretch_mode = 0
+script = SubResource("GDScript_hwg4y")
+
+[node name="history-btn" type="TextureButton" parent="UIManager/start_screen"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 54.0
+offset_bottom = 53.0
+texture_normal = ExtResource("8_3t4qf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="open_saved_game" type="TextureButton" parent="UIManager/start_screen"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 16.0
+offset_right = 103.0
+offset_bottom = 48.0
+texture_normal = ExtResource("31_sjfcr")
+
+[node name="aboutus" type="TextureButton" parent="UIManager/start_screen"]
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 17.0
+offset_right = 1074.0
+offset_bottom = 60.0
+texture_normal = ExtResource("41_3kwc0")
+stretch_mode = 0
+script = ExtResource("37_l2r6x")
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/start_screen"]
+material = SubResource("ShaderMaterial_jujby")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -189.0
+offset_right = 271.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_17klg")
+expand_mode = 1
+script = ExtResource("37_jujby")
+
+[node name="setting-modal" type="Panel" parent="UIManager/start_screen"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_ugojt")
+
+[node name="add-username" type="Button" parent="UIManager/start_screen/setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -91.0
+offset_right = 125.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Add Username"
+
+[node name="Audio" type="Button" parent="UIManager/start_screen/setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -8.0
+offset_right = 125.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Audio"
+
+[node name="info-btn" type="Button" parent="UIManager/start_screen/setting-modal"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 72.0
+offset_right = 125.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s5p1y")
+text = "Info"
+
+[node name="Label" type="Label" parent="UIManager/start_screen/setting-modal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -179.5
+offset_right = 70.5
+offset_bottom = -146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65, 0.65, 0.65, 1)
+theme_override_colors/font_shadow_color = Color(0.16, 0.16, 0.16, 1)
+theme_override_font_sizes/font_size = 26
+text = "Setting"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="back" type="TextureButton" parent="UIManager/start_screen/setting-modal"]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 18.0
+offset_right = 578.0
+offset_bottom = 55.0
+texture_normal = ExtResource("16_qgjuk")
+stretch_mode = 0
+
+[node name="to-addusername-container" type="Panel" parent="UIManager/start_screen"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5h3x")
+
+[node name="TextEdit" type="TextEdit" parent="UIManager/start_screen/to-addusername-container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -60.0
+offset_right = 52.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "enter username"
+
+[node name="submit-btn" type="Button" parent="UIManager/start_screen/to-addusername-container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 61.5
+offset_top = -61.5
+offset_right = 172.5
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bo5y2")
+text = "Submit"
+
+[node name="close-btn" type="Button" parent="UIManager/start_screen/to-addusername-container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = 11.0
+offset_right = -11.0
+offset_bottom = 51.0
+grow_horizontal = 0
+icon = ExtResource("16_qgjuk")
+icon_alignment = 1
+
+[node name="welcome_player" type="Label" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_top = 69.0
+offset_right = 158.5
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="saved_game_modal" type="Panel" parent="UIManager/start_screen"]
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.5
+offset_top = -265.5
+offset_right = 469.5
+offset_bottom = 265.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nthpl")
+script = ExtResource("36_ci57a")
+
+[node name="Label" type="Label" parent="UIManager/start_screen/saved_game_modal"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_top = 27.0
+offset_right = 81.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Saved Game
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UIManager/start_screen/saved_game_modal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 84.0
+offset_right = -16.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="saved_game_list" type="VBoxContainer" parent="UIManager/start_screen/saved_game_modal/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dvv1")
+
+[node name="load-game-btn" type="Button" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -586.5
+offset_top = 63.5
+offset_right = -447.5
+offset_bottom = 112.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_w0eu7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4quil")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_go0ve")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yyanc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8kx6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1rl6b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_aq8fp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_baixc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cydf8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qtynr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_peuwe")
+text = "Load Game"
+
+[node name="delete-btn" type="Button" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -436.5
+offset_top = 63.5
+offset_right = -303.5
+offset_bottom = 112.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.94, 0.0752, 0.0752, 1)
+theme_override_colors/font_hover_color = Color(0.941176, 0.0745098, 0.0745098, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_w0eu7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_66ttw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lrq7u")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_qs1pe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5vpuy")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_okyg2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6fxty")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xgi7e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lx43u")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_f7338")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ym6s4")
+text = "Delete"
+
+[node name="username" type="Label" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 52.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 18
+text = "🧑"
+
+[node name="filename" type="Label" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 42.0
+offset_right = 53.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 18
+text = "📁"
+
+[node name="floorname" type="Label" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 68.0
+offset_right = 52.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 18
+text = "🗺"
+
+[node name="date" type="Label" parent="UIManager/start_screen/saved_game_modal/ScrollContainer/saved_game_list/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 97.0
+offset_right = 52.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 18
+text = "📅"
+
+[node name="close-save-con" type="TextureButton" parent="UIManager/start_screen/saved_game_modal"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 14.0
+offset_right = -13.0
+offset_bottom = 42.0
+grow_horizontal = 0
+texture_normal = ExtResource("16_qgjuk")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="view_history" type="Panel" parent="UIManager/start_screen"]
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.5
+offset_top = -265.5
+offset_right = 469.5
+offset_bottom = 265.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nthpl")
+script = ExtResource("34_bc27i")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UIManager/start_screen/view_history"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 80.0
+offset_right = -20.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="history_list" type="HBoxContainer" parent="UIManager/start_screen/view_history/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="UIManager/start_screen/view_history/ScrollContainer/history_list"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t6ee")
+
+[node name="playername" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.5
+offset_top = -179.5
+offset_right = 113.5
+offset_bottom = -159.5
+grow_vertical = 2
+text = "playername"
+
+[node name="gamedifficulty" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 50.0
+offset_right = 63.0
+offset_bottom = 70.0
+text = "game"
+
+[node name="gametime" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 79.0
+offset_right = 102.0
+offset_bottom = 99.0
+text = "game time"
+
+[node name="deathcount" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 110.0
+offset_right = 112.0
+offset_bottom = 130.0
+text = "deathcount"
+
+[node name="unlockdoors" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 17.5
+offset_top = 138.5
+offset_right = 119.5
+offset_bottom = 158.5
+text = "unlockdoors"
+
+[node name="unlockchests" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 17.5
+offset_top = 168.5
+offset_right = 118.5
+offset_bottom = 188.5
+text = "unlockchest"
+
+[node name="killeddrones" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 18.5
+offset_top = 201.5
+offset_right = 119.5
+offset_bottom = 221.5
+text = "killeddrones"
+
+[node name="killedrobots" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 19.5
+offset_top = 234.5
+offset_right = 116.5
+offset_bottom = 254.5
+text = "killedrobots"
+
+[node name="date" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 20.5
+offset_top = 269.5
+offset_right = 60.5
+offset_bottom = 289.5
+text = "date"
+
+[node name="performance_message" type="Label" parent="UIManager/start_screen/view_history/ScrollContainer/history_list/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 302.0
+offset_right = 327.0
+offset_bottom = 384.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="close-history-modal" type="TextureButton" parent="UIManager/start_screen/view_history"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 14.0
+offset_right = -13.0
+offset_bottom = 42.0
+grow_horizontal = 0
+texture_normal = ExtResource("16_qgjuk")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UIManager/start_screen/view_history"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 19.0
+offset_right = 30.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "History"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AboutUsPanel" type="Panel" parent="UIManager/start_screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2r6x")
+
+[node name="CarouselContainer" type="VBoxContainer" parent="UIManager/start_screen/AboutUsPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("43_qtynr")
+
+[node name="CardContainer" type="Panel" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtynr")
+
+[node name="Photo" type="TextureRect" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer/CardContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.5
+offset_top = 105.0
+offset_right = 86.5
+offset_bottom = 256.0
+grow_horizontal = 2
+expand_mode = 1
+
+[node name="NameLabel" type="Label" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer/CardContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 18.0
+offset_right = 20.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoleLabel" type="Label" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer/CardContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="HBoxContainer" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="RightButton" type="Button" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="AutoSlideTimer" type="Timer" parent="UIManager/start_screen/AboutUsPanel/CarouselContainer"]
+
+[node name="info-route" type="ColorRect" parent="UIManager"]
+visible = false
+z_index = 999
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.5
+offset_top = -324.0
+offset_right = 576.5
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0235294, 0.168627, 0.341176, 1)
+script = ExtResource("15_qgjuk")
+
+[node name="Label" type="Label" parent="UIManager/info-route"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -279.5
+offset_right = 47.5
+offset_bottom = -220.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Info"
+
+[node name="info-page" type="ScrollContainer" parent="UIManager/info-route"]
+layout_mode = 0
+offset_top = 205.0
+offset_right = 1152.0
+offset_bottom = 648.0
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/info-route/info-page"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="control-info" type="VBoxContainer" parent="UIManager/info-route/info-page/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UIManager/info-route/info-page/MarginContainer/control-info"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("43_lm0ts")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UIManager/info-route/info-page/MarginContainer/control-info"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+texture = ExtResource("42_l5i1m")
+expand_mode = 1
+
+[node name="control-info-btn" type="Button" parent="UIManager/info-route"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 122.0
+offset_right = 227.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_datfd")
+text = "Control Info"
+
+[node name="back" type="TextureButton" parent="UIManager/info-route"]
+layout_mode = 0
+offset_left = 1089.0
+offset_top = 17.0
+offset_right = 1136.0
+offset_bottom = 50.0
+texture_normal = ExtResource("16_qgjuk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="save-station-ui" type="Control" parent="UIManager"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("30_r37pl")
+
+[node name="save_container" type="Panel" parent="UIManager/save-station-ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -231.5
+offset_right = 471.0
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bj71x")
+
+[node name="save-station-label" type="Label" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.5
+offset_top = 22.0
+offset_right = 142.5
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Save Your Chapter"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="floor-name-label" type="Label" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.0
+offset_top = -27.5
+offset_right = -163.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="saved_name" type="TextEdit" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -26.5
+offset_right = 151.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+
+[node name="save_btn" type="Button" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.5
+offset_top = -22.0
+offset_right = 353.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ihpr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ci57a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rv7a5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_c3uee")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fr7fn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bc27i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w0eu7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8dvv1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nthpl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bo5y2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5h3x")
+text = "Save Progress"
+icon = ExtResource("31_sjfcr")
+
+[node name="close-btn" type="Button" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 44.0
+grow_horizontal = 0
+icon = ExtResource("16_qgjuk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="save-message" type="Label" parent="UIManager/save-station-ui/save_container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 95.0
+offset_right = 80.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="reset_timer" type="Timer" parent="UIManager/save-station-ui"]
+
+[node name="SoundSystemPanel" type="Panel" parent="UIManager"]
+visible = false
+z_index = 901
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("30_y5h3x")
+
+[node name="BackgroundVolume" type="Label" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -67.0
+offset_right = -139.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "BackGround Music"
+
+[node name="bg_slider" type="HSlider" parent="UIManager/SoundSystemPanel"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -59.0
+offset_right = 225.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_bc27i")
+value = 100.0
+rounded = true
+
+[node name="bg_percent_label" type="Label" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 255.0
+offset_top = -71.0
+offset_right = 301.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSound" type="Label" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.5
+offset_top = -17.0
+offset_right = -217.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Sound Effect"
+
+[node name="sfx_slider" type="HSlider" parent="UIManager/SoundSystemPanel"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_bc27i")
+value = 100.0
+rounded = true
+
+[node name="sfx_percent_label" type="Label" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 255.5
+offset_top = -18.0
+offset_right = 300.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundSystemLabel" type="Label" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.5
+offset_top = 181.0
+offset_right = 116.5
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Sound System"
+
+[node name="backbtn" type="TextureButton" parent="UIManager/SoundSystemPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = 48.0
+grow_horizontal = 0
+texture_normal = ExtResource("16_qgjuk")
+stretch_mode = 5
+
+[node name="finaly_ui" type="Control" parent="UIManager"]
+visible = false
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("39_c3uee")
+
+[node name="Panel" type="Panel" parent="UIManager/finaly_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jujby")
+
+[node name="Label" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.5
+offset_top = 50.0
+offset_right = 168.5
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2625, 0.60375, 0.75, 1)
+theme_override_colors/font_shadow_color = Color(0.44, 0.44, 0.44, 1)
+theme_override_font_sizes/font_size = 32
+text = "Mission Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = 112.0
+offset_right = 187.0
+offset_bottom = 171.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "What happened here… no one can say.
+Some things are better left unknown."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="difficulty" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -119.0
+offset_right = 180.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Game Time :  "
+vertical_alignment = 1
+
+[node name="gametime" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -86.0
+offset_right = -2.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Game Time :  "
+vertical_alignment = 1
+
+[node name="deathcount" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -52.0
+offset_right = 10.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Death Count :  "
+vertical_alignment = 1
+
+[node name="openeddoor" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -16.0
+offset_right = 82.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Opened Door Count :  "
+vertical_alignment = 1
+
+[node name="openedchest" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 19.0
+offset_right = 82.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Opened chest Count :"
+vertical_alignment = 1
+
+[node name="killeddrone" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 54.0
+offset_right = 84.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Killed Drone Count :"
+vertical_alignment = 1
+
+[node name="killedrobot" type="Label" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 90.0
+offset_right = 85.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Killed Robot Count :"
+vertical_alignment = 1
+
+[node name="back_to_menu" type="Button" parent="UIManager/finaly_ui/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -109.0
+offset_right = 85.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwg4y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_l2r6x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3kwc0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_217he")
+theme_override_styles/hover = SubResource("StyleBoxFlat_peuwe")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lm0ts")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_l5i1m")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2t6ee")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hwg4y")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jujby")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ihpr")
+text = "Back To Menu"
+
+[node name="FadeTransitions" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+script = ExtResource("32_sjfcr")
+
+[node name="VidLoading" type="VideoStreamPlayer" parent="FadeTransitions"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("46_2t6ee")
+volume_db = 10.0
+expand = true
+
+[node name="LabelContainer" type="HBoxContainer" parent="FadeTransitions"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TransitionLabel" type="Label" parent="FadeTransitions"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 106.0
+offset_right = 20.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.533, 0.78, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.823333, 0.95, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ending" type="CanvasLayer" parent="."]
+layer = 6
+visible = false
+script = ExtResource("49_peuwe")
+
+[node name="RedOverlay" type="ColorRect" parent="Ending"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="WarningLabel" type="Label" parent="Ending"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 127.0
+offset_right = 20.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="StuckLabel" type="Label" parent="Ending"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WarningSound" type="AudioStreamPlayer2D" parent="Ending"]
+stream = ExtResource("50_217he")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_bj71x")
+
+[connection signal="visibility_changed" from="DoorsChestDebugModal/Escape-Door-Modal" to="DoorsChestDebugModal/Escape-Door-Modal" method="_on_visibility_changed"]
+[connection signal="pressed" from="DoorsChestDebugModal/Escape-Door-Modal/Panel/Button" to="DoorsChestDebugModal/Escape-Door-Modal" method="_on_button_pressed"]
+[connection signal="pressed" from="DoorsChestDebugModal/Escape-Door-Modal/Panel/back_button" to="DoorsChestDebugModal/Escape-Door-Modal" method="_on_back_button_pressed"]
+[connection signal="pressed" from="UIManager/ingame_ui/ingame_setting" to="UIManager/ingame_ui" method="_on_ingame_setting_pressed"]
+[connection signal="pressed" from="UIManager/ingame_ui/ingame-setting-modal/resume-btn" to="UIManager/ingame_ui" method="_on_resumebtn_pressed"]
+[connection signal="pressed" from="UIManager/ingame_ui/ingame-setting-modal/soundsystem" to="UIManager/ingame_ui" method="_on_soundsystem_pressed"]
+[connection signal="pressed" from="UIManager/ingame_ui/ingame-setting-modal/info-btn" to="UIManager/ingame_ui" method="_on_infobtn_pressed"]
+[connection signal="pressed" from="UIManager/ingame_ui/ingame-setting-modal/quit-btn" to="UIManager/ingame_ui" method="_on_quitbtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/new-game-btn" to="UIManager/start_screen" method="_on_newgamebtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/exit-btn" to="UIManager/start_screen" method="_on_exitbtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/setting-btn" to="UIManager/start_screen" method="_on_settingbtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/history-btn" to="UIManager/start_screen" method="_on_historybtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/open_saved_game" to="UIManager/start_screen" method="_on_open_saved_game_pressed"]
+[connection signal="mouse_entered" from="UIManager/start_screen/aboutus" to="UIManager/start_screen/aboutus" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UIManager/start_screen/aboutus" to="UIManager/start_screen/aboutus" method="_on_mouse_exited"]
+[connection signal="pressed" from="UIManager/start_screen/aboutus" to="UIManager/start_screen/aboutus" method="_on_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/setting-modal/add-username" to="UIManager/start_screen" method="_on_addusername_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/setting-modal/Audio" to="UIManager/start_screen" method="_on_audio_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/setting-modal/info-btn" to="UIManager/start_screen" method="_on_infobtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/setting-modal/back" to="UIManager/start_screen" method="_on_back_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/to-addusername-container/submit-btn" to="UIManager/start_screen" method="_on_submitbtn_addusername_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/to-addusername-container/close-btn" to="UIManager/start_screen" method="_on_closebtn_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/saved_game_modal/close-save-con" to="UIManager/start_screen" method="_on_closesavecon_pressed"]
+[connection signal="pressed" from="UIManager/start_screen/view_history/close-history-modal" to="UIManager/start_screen" method="_on_closehistorymodal_pressed"]
+[connection signal="pressed" from="UIManager/info-route/control-info-btn" to="UIManager/info-route" method="_on_controlinfobtn_pressed"]
+[connection signal="pressed" from="UIManager/info-route/back" to="UIManager/info-route" method="_on_back_pressed"]
+[connection signal="pressed" from="UIManager/save-station-ui/save_container/save_btn" to="UIManager/save-station-ui" method="_on_save_btn_pressed"]
+[connection signal="pressed" from="UIManager/save-station-ui/save_container/close-btn" to="UIManager/save-station-ui" method="_on_closebtn_pressed"]
+[connection signal="pressed" from="UIManager/SoundSystemPanel/backbtn" to="UIManager/SoundSystemPanel" method="_on_backbtn_pressed"]
+[connection signal="pressed" from="UIManager/finaly_ui/Panel/back_to_menu" to="UIManager/finaly_ui" method="_on_back_to_menu_pressed"]

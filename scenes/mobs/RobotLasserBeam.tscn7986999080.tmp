@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck5sgced8y5tp"]
+
+[ext_resource type="Script" uid="uid://bccjhox05wk8c" path="res://scenes/mobs/robot_laser_beam.gd" id="1_81ycp"]
+[ext_resource type="Texture2D" uid="uid://bry6grdes545o" path="res://assets/img/beams.png" id="2_5ldj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdh05"]
+atlas = ExtResource("2_5ldj6")
+region = Rect2(33, 312, 16, 65)
+
+[node name="RobotLaserBeam" type="Node2D"]
+script = ExtResource("1_81ycp")
+laser_duration = null
+laser_length = null
+flicker_speed = null
+
+[node name="LaserSprite" type="TextureRect" parent="."]
+scale = Vector2(1, 2.86571)
+texture = SubResource("AtlasTexture_mdh05")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="LifeTimer" type="Timer" parent="."]

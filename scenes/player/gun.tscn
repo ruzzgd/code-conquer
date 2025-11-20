@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://coratg6fs8ns0"]
+
+[ext_resource type="Texture2D" uid="uid://bkhfh1nsfsihb" path="res://assets/img/player-gun.png" id="1_ae5e1"]
+[ext_resource type="Script" uid="uid://bcfwdqevikp46" path="res://scenes/player/gun.gd" id="1_j0ebl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wexpw"]
+radius = 29.0172
+
+[node name="Gun" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_j0ebl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_wexpw")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -5.0
+offset_right = 18.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ae5e1")
+expand_mode = 1

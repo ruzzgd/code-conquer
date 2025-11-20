@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhs5c4nhdc1l7"]
+
+[ext_resource type="Script" uid="uid://delh4bwl8nsiw" path="res://scenes/mobs/drone_body.gd" id="1_ollsl"]
+[ext_resource type="Texture2D" uid="uid://c5yjs82rxser3" path="res://assets/sprites/Idle/idle_down.png" id="2_nlewb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2i34"]
+atlas = ExtResource("2_nlewb")
+region = Rect2(3.5, 0, 43, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxgcf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2i34"]
+bg_color = Color(0.22, 0.22, 0.22, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.42, 0.42, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlewb"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4h84k"]
+radius = 114.215
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nlewb"]
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlewb"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2i34"]
+radius = 183.175
+
+[node name="DroneMob" type="Node2D" groups=["drone"]]
+
+[node name="DroneBody" type="CharacterBody2D" parent="." groups=["drone"]]
+z_index = 9
+position = Vector2(-1, 0)
+script = ExtResource("1_ollsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="DroneBody"]
+scale = Vector2(1.94186, 1.65625)
+texture = SubResource("AtlasTexture_h2i34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroneBody"]
+position = Vector2(-1, 14)
+shape = SubResource("CircleShape2D_fxgcf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DroneBody"]
+
+[node name="drone-hp" type="ProgressBar" parent="DroneBody"]
+offset_left = -10.0
+offset_top = -28.0
+offset_right = 12.0
+offset_bottom = -26.0
+theme_override_styles/background = SubResource("StyleBoxFlat_h2i34")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nlewb")
+show_percentage = false
+
+[node name="attack_timer" type="Timer" parent="DroneBody"]
+wait_time = 3.0
+
+[node name="AreaToDetect" type="Area2D" parent="DroneBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroneBody/AreaToDetect"]
+shape = SubResource("CircleShape2D_4h84k")
+
+[node name="hit_box" type="Area2D" parent="DroneBody"]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroneBody/hit_box"]
+shape = SubResource("CapsuleShape2D_nlewb")
+
+[node name="ChaseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
+shape = SubResource("CircleShape2D_nlewb")
+one_way_collision_margin = 128.0
+
+[node name="PatrolArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PatrolArea"]
+shape = SubResource("CircleShape2D_h2i34")

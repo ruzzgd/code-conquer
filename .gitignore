@@ -1,0 +1,11 @@
+# Godot 4+ project
+.godot/
+*.import
+*.import/
+export_presets.cfg
+*.mono/
+*.log
+
+# Builds / Exports
+android/
+code_conquer.exe

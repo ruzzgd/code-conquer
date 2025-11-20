@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4q3orahwuyld"]
+
+[ext_resource type="Script" uid="uid://busyfoa2cco4e" path="res://scenes/mobs/dronebullet.gd" id="1_7nujd"]
+[ext_resource type="Texture2D" uid="uid://bry6grdes545o" path="res://assets/img/beams.png" id="2_7nujd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_docou"]
+size = Vector2(19, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nujd"]
+atlas = ExtResource("2_7nujd")
+region = Rect2(122, 222, 30, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy38q"]
+size = Vector2(19, 6)
+
+[node name="DroneBullet" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 0
+script = ExtResource("1_7nujd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_docou")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.236725, 0.280103)
+texture = SubResource("AtlasTexture_7nujd")
+
+[node name="HitDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_fy38q")

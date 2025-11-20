@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1yakvyqkf3rh"]
+
+[ext_resource type="Script" uid="uid://djccebv8ij4fk" path="res://scenes/chest_and_buff_and_core/buff_container/attack_range_buff.gd" id="1_wn7rm"]
+[ext_resource type="Texture2D" uid="uid://cptywfipihkmr" path="res://assets/buff-icon/extra_atk_range.png" id="2_cmo1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmo1v"]
+radius = 25.0
+
+[node name="AttackRangeBuff" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_wn7rm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_cmo1v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cmo1v")
+expand_mode = 1

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxoua6n0q8ea"]
+
+[ext_resource type="Script" uid="uid://b5xa6pqm65aqo" path="res://scenes/chest_and_buff_and_core/buff_container/bullet_magazine.gd" id="1_136ce"]
+[ext_resource type="Texture2D" uid="uid://de8lgymlnhc2j" path="res://assets/img/bullet-icon.png" id="1_gnee1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_136ce"]
+radius = 26.3688
+
+[node name="bullet_magazine" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_136ce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_136ce")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gnee1")
+expand_mode = 1

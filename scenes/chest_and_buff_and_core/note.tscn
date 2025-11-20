@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cphxn02dpoevx"]
+
+[ext_resource type="Texture2D" uid="uid://dfc8ofpk4l3rs" path="res://assets/img/note.png" id="1_28mql"]
+[ext_resource type="Script" uid="uid://b6abbie8goev7" path="res://scenes/chest_and_buff_and_core/note.gd" id="1_yh6eu"]
+[ext_resource type="Shader" uid="uid://ctm7j3q20xlqk" path="res://scenes/chest_and_buff_and_core/note.gdshader" id="2_v8iju"]
+[ext_resource type="Texture2D" uid="uid://kd0dbfq8pka6" path="res://assets/sprites/Shadow.png" id="2_yh6eu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8csu"]
+radius = 25.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1l3b"]
+shader = ExtResource("2_v8iju")
+shader_parameter/glow_color = Color(1, 1, 0.5, 1)
+shader_parameter/glow_strength = 0.5
+shader_parameter/pulse_speed = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga8vp"]
+atlas = ExtResource("2_yh6eu")
+
+[node name="note" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_yh6eu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_m8csu")
+
+[node name="FloatImage" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="FloatImage"]
+material = SubResource("ShaderMaterial_d1l3b")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -22.0
+offset_right = 10.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_28mql")
+expand_mode = 1
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+position = Vector2(2.0206e-05, -7)
+scale = Vector2(0.999999, 0.9375)
+texture = SubResource("AtlasTexture_ga8vp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

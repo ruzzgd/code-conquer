@@ -2763,7 +2763,6 @@ vertical_alignment = 1
 
 [node name="Ending" type="CanvasLayer" parent="."]
 layer = 6
-visible = false
 script = ExtResource("49_peuwe")
 
 [node name="RedOverlay" type="ColorRect" parent="Ending"]

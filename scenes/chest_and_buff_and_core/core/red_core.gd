@@ -32,4 +32,4 @@ func _show_escape_warning():
 	# Get the UI CanvasLayer (adjust path if needed)
 	var ui = get_tree().current_scene.find_child("Ending")  
 	if ui:
-		ui.start_escape_warning(20)  # 3 minutes countdown
+		ui.start_escape_warning(180)  # 3 minutes countdown

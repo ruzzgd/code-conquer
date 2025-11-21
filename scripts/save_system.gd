@@ -8,6 +8,7 @@ var opened_chests := {}
 var opened_doors := {}
 var killed_drones := {}
 var killed_robots := {}
+var killed_bosses := {}  # ✅ Track killed bosses
 
 const SAVE_DIR := "user://code_conquer_saves_gameplay"
 
@@ -16,6 +17,7 @@ var save_data := {
 	"doors_opened": {},
 	"killed_drones": {},
 	"killed_robots": {},
+	"killed_bosses": {},      # ✅ Include bosses in save
 	"player_state": {},
 	"current_map_path": "",
 	"player_spawn_marker_path": "",
@@ -24,7 +26,7 @@ var save_data := {
 	"save_station_map": "",
 	"gameplay_time": 0.0,
 	"cores_collected": {},
-	"saved_at": ""  # ✅ add field here
+	"saved_at": ""  # ✅ Timestamp
 }
 
 func reset_save():
@@ -32,6 +34,7 @@ func reset_save():
 	opened_doors = {}
 	killed_drones = {}
 	killed_robots = {}
+	killed_bosses = {}  # ✅ reset bosses
 	player_state = {}
 
 	save_data = {
@@ -39,6 +42,7 @@ func reset_save():
 		"doors_opened": {},
 		"killed_drones": {},
 		"killed_robots": {},
+		"killed_bosses": {},  # ✅ reset bosses
 		"player_state": {},
 		"current_map_path": "",
 		"player_spawn_marker_path": "",
@@ -47,13 +51,12 @@ func reset_save():
 		"save_station_map": "",
 		"gameplay_time": 0.0,
 		"cores_collected": {},
-		"saved_at": ""  # ✅ reset too
+		"saved_at": ""
 	}
 
 func save_game(file_name := "", save_station_map := ""):
 	if file_name == "":
 		file_name = GameManager.get_save_file()
-
 	if file_name == "":
 		print("❌ No valid filename provided or tracked. Save aborted.")
 		return
@@ -77,6 +80,7 @@ func save_game(file_name := "", save_station_map := ""):
 	save_data["doors_opened"] = opened_doors
 	save_data["killed_drones"] = killed_drones
 	save_data["killed_robots"] = killed_robots
+	save_data["killed_bosses"] = killed_bosses       # ✅ save bosses
 	save_data["current_map_path"] = GameManager.current_map_path
 	save_data["player_spawn_marker_path"] = GameManager.current_save_station_marker
 	save_data["difficulty"] = GameManager.difficulty
@@ -87,8 +91,8 @@ func save_game(file_name := "", save_station_map := ""):
 	save_data["opened_chests_count"] = GameManager.opened_chests_count
 	save_data["killed_drones_count"] = GameManager.killed_drones_count
 	save_data["killed_robots_count"] = GameManager.killed_robots_count
-	save_data["cores_collected"] = GameManager.cores_collected 
-	save_data["saved_at"] = Time.get_datetime_string_from_system(true, true)  # ✅ store save timestamp
+	save_data["cores_collected"] = GameManager.cores_collected
+	save_data["saved_at"] = Time.get_datetime_string_from_system(true, true)
 
 	var player_node = get_tree().get_first_node_in_group("player")
 	if player_node:
@@ -97,7 +101,7 @@ func save_game(file_name := "", save_station_map := ""):
 
 	var file = FileAccess.open(final_path, FileAccess.WRITE)
 	if file:
-		file.store_string(JSON.stringify(save_data, "\t"))  # ✅ keep pretty format
+		file.store_string(JSON.stringify(save_data, "\t"))
 		file.close()
 		print("✅ Game saved to:", final_path)
 
@@ -122,23 +126,21 @@ func load_game(file_name := "save_data.json"):
 		print("❌ Save data is invalid!")
 		return
 
-	if not save_data.has("current_map_path") or not save_data.has("player_spawn_marker_path"):
-		print("❌ Save file is missing critical data. Aborting load.")
-		return
-
 	GameManager.player_username = save_data.get("player_username", "")
 	opened_chests = save_data.get("chests_opened", {})
 	opened_doors = save_data.get("doors_opened", {})
 	killed_drones = save_data.get("killed_drones", {})
 	killed_robots = save_data.get("killed_robots", {})
+	killed_bosses = save_data.get("killed_bosses", {})   # ✅ load bosses
 	player_state = save_data.get("player_state", {})
+
 	GameManager.death_count = save_data.get("death_count", 0)
 	GameManager.opened_doors_count = save_data.get("opened_doors_count", 0)
 	GameManager.opened_chests_count = save_data.get("opened_chests_count", 0)
 	GameManager.killed_drones_count = save_data.get("killed_drones_count", 0)
 	GameManager.killed_robots_count = save_data.get("killed_robots_count", 0)
 
-	# ✅ Load cores
+	# Load cores
 	GameManager.cores_collected = save_data.get("cores_collected", {
 		"green": false,
 		"blue": false,
@@ -153,6 +155,9 @@ func load_game(file_name := "save_data.json"):
 	var loaded_time = save_data.get("gameplay_time", 0.0)
 	GameManager.game_timer = loaded_time
 	GameManager.update_map(GameManager.current_map_path, GameManager.spawn_marker_name)
+
+	# ✅ Remove killed bosses from scene
+	reapply_map_state()
 
 	# ✅ Update UI for already collected cores
 	for core_type in GameManager.cores_collected.keys():
@@ -180,17 +185,30 @@ func is_drone_killed(drone_id: String) -> bool:
 
 func is_robot_killed(robot_id: String) -> bool:
 	return killed_robots.has(robot_id) and killed_robots[robot_id]
-	
+
+func is_boss_killed(boss_id: String) -> bool:
+	return killed_bosses.has(boss_id) and killed_bosses[boss_id]
+
+func mark_boss_killed(boss_id: String) -> void:
+	killed_bosses[boss_id] = true
+	save_game()  # optional auto-save on boss kill
+
 func _ready():
 	print("✅ SaveSystem ready")
 	GameManager.map_updated.connect(_on_map_changed)
 
 func _on_map_changed(new_map_path: String, spawn_marker: String) -> void:
-	await get_tree().process_frame  
+	await get_tree().process_frame
 	reapply_map_state()
-	
+
 func reapply_map_state():
 	print("✅ SaveSystem reapplying saved state")
 	for node in get_tree().get_nodes_in_group("persistent_object"):
 		if node.has_method("apply_saved_state"):
 			node.apply_saved_state()
+
+	# ✅ Remove killed bosses automatically
+	for boss_node in get_tree().get_nodes_in_group("boss"):
+		if boss_node.name != "" and is_boss_killed(boss_node.name):
+			if boss_node.is_inside_tree():
+				boss_node.queue_free()

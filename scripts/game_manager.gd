@@ -25,7 +25,16 @@ var player_username: String:
 		emit_signal("username_changed", value)
 	get:
 		return _player_username
+# Global flag for saving
+var can_save: bool = true
+# Optional signal if you want save stations to react immediately
+signal can_save_changed(new_value: bool)
 
+# Function to set it safely
+func set_can_save(value: bool) -> void:
+	if can_save != value:
+		can_save = value
+		emit_signal("can_save_changed", value)
 # TIMER
 var game_timer := 0.0
 var death_count : int = 0

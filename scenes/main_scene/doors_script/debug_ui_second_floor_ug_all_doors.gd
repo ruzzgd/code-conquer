@@ -23,19 +23,19 @@ var loading_dots: int = 0
 
 var medium_challenges: Array = [
 	{
-		"buggy_code": 'nums = [1,2,3]\nfor n nums:\nprint(n)',
-		"expected_output": '1 2 3',
-		"required_vars": ["nums"]
+		"buggy_code": 'nums = [1,2,3]\ntotal = 0\nfor n nums\n    total += n\nprint("Sum:" + total)',
+		"expected_output": 'Sum:6',
+		"required_vars": ["nums","total","n"]
 	},
 	{
-		"buggy_code": 'letters = ["a","b","c"]\ni = 0\nwhile i < len(letters)\nprint(letters[i])\ni += 1',
+		"buggy_code": 'letters = ["a","b","c"]\ni = 0\nwhile i < len(letters)\nprint(letters[i])\ni +=1',
 		"expected_output": 'a b c',
 		"required_vars": ["letters","i"]
 	},
 	{
-		"buggy_code": 'matrix = [[1,2],[3,4]]\nfor row in matrix:\nfor x in row\nprint(x)',
+		"buggy_code": 'matrix=[[1,2],[3,4]]\nfor row matrix\n    for n row\n        print(n)',
 		"expected_output": '1 2 3 4',
-		"required_vars": ["matrix"]
+		"required_vars": ["matrix","row","n"]
 	},
 	{
 		"buggy_code": 'for i in range(3)\n    for j in range(2)\n        print(i+j, end=" ")',
@@ -43,24 +43,24 @@ var medium_challenges: Array = [
 		"required_vars": ["i","j"]
 	},
 	{
-		"buggy_code": 'nums = [2,4,6]\ni=0\nwhile i<len(nums):\nprint("Num:" + str(nums[i]))\ni+=1',
+		"buggy_code": 'nums=[2,4,6]\ni=0\nwhile i<len(nums):\nprint("Num:"+str(nums[i]))\ni+=1',
 		"expected_output": 'Num:2 Num:4 Num:6',
 		"required_vars": ["nums","i"]
 	},
 	{
-		"buggy_code": 'for i in range(1,4)\n    total += i\nprint("Total:" + str(total))',
+		"buggy_code": 'total=0\nfor i in range(1,4)\n    total=+i\nprint("Total:"+str(total))',
 		"expected_output": 'Total:6',
 		"required_vars": ["total","i"]
 	},
 	{
-		"buggy_code": 'data = ["x","y","z"]\nfor i in range(len(data))\nprint(data[i], end=" ")',
+		"buggy_code": 'data=["x","y","z"]\nfor i in range(len(data))\nprint(data[i], end=" ")',
 		"expected_output": 'x y z',
 		"required_vars": ["data","i"]
 	},
 	{
 		"buggy_code": 'fruits = ["apple","banana"]\nfor f in fruits print(f)',
 		"expected_output": 'apple banana',
-		"required_vars": ["fruits"]
+		"required_vars": ["fruits","f"]
 	},
 	{
 		"buggy_code": 'for i in range(3):\n    if i%2==0\n        print(i, end=" ")',
@@ -68,46 +68,45 @@ var medium_challenges: Array = [
 		"required_vars": ["i"]
 	},
 	{
-		"buggy_code": 'vals = [1,2,3]\nfor v vals:\nprint("Value:" + str(v))',
+		"buggy_code": 'vals = [1,2,3]\nfor v vals:\nprint("Value:"+str(v))',
 		"expected_output": 'Value:1 Value:2 Value:3',
-		"required_vars": ["vals"]
+		"required_vars": ["vals","v"]
 	}
 ]
 
-
 var hard_challenges: Array = [
 	{
-		"buggy_code": 'sum=0\nfor x in range(1,5)\nsum+=x\nprit("Sum:" + str(sum))',
+		"buggy_code": 'sum=0\nfor x in range(1,5)\nsum+=x\nprit("Sum:"+str(sum))',
 		"expected_output": 'Sum:10',
 		"required_vars": ["sum","x"]
 	},
 	{
-		"buggy_code": 'words = ["cat","dog"]\nfor w words:\nprint("Word:" + w)',
+		"buggy_code": 'words = ["cat","dog"]\nfor w words:\nprint("Word:"+w)',
 		"expected_output": 'Word:cat Word:dog',
-		"required_vars": ["words"]
+		"required_vars": ["words","w"]
 	},
 	{
-		"buggy_code": 'i=0\nwhile i<3\n    print("Count:" + str(i))\n    i+=1',
+		"buggy_code": 'i=0\nwhile i<3\nprint("Count:"+str(i))\ni+=1',
 		"expected_output": 'Count:0 Count:1 Count:2',
 		"required_vars": ["i"]
 	},
 	{
-		"buggy_code": 'matrix = [[1,2],[3,4]]\nfor row in matrix:\n    for v in row\n        print("Val:" + str(v))',
+		"buggy_code": 'matrix=[[1,2],[3,4]]\nfor row matrix\n    for v in row\n        print("Val:"+str(v))',
 		"expected_output": 'Val:1 Val:2 Val:3 Val:4',
-		"required_vars": ["matrix"]
+		"required_vars": ["matrix","row","v"]
 	},
 	{
-		"buggy_code": 'nums=[2,4,6]\nfor n in nums\n    total += n\nprint("Total:" + str(total))',
+		"buggy_code": 'nums=[2,4,6]\nfor n nums\n    total += n\nprint("Total:"+str(total))',
 		"expected_output": 'Total:12',
-		"required_vars": ["nums","total"]
+		"required_vars": ["nums","total","n"]
 	},
 	{
-		"buggy_code": 'letters=["x","y","z"]\nfor l letters:\nprint("Letter:" + l)',
+		"buggy_code": 'letters=["x","y","z"]\nfor l letters:\nprint("Letter:"+l)',
 		"expected_output": 'Letter:x Letter:y Letter:z',
-		"required_vars": ["letters"]
+		"required_vars": ["letters","l"]
 	},
 	{
-		"buggy_code": 'vals=[5,10]\ni=0\nwhile i<len(vals)\nprint("Val:" + str(vals[i]))\ni+=1',
+		"buggy_code": 'vals=[5,10]\ni=0\nwhile i<len(vals)\nprint("Val:"+str(vals[i]))\ni+=1',
 		"expected_output": 'Val:5 Val:10',
 		"required_vars": ["vals","i"]
 	},
@@ -117,12 +116,12 @@ var hard_challenges: Array = [
 		"required_vars": ["i","j"]
 	},
 	{
-		"buggy_code": 'data=[1,2,3]\nfor d data:\nprint("Data:" + str(d))',
+		"buggy_code": 'data=[1,2,3]\nfor d data:\nprint("Data:"+str(d))',
 		"expected_output": 'Data:1 Data:2 Data:3',
-		"required_vars": ["data"]
+		"required_vars": ["data","d"]
 	},
 	{
-		"buggy_code": 'for n in range(1,4):\n    result=n*2\nprit("Result:" + str(result))',
+		"buggy_code": 'for n in range(1,4):\n    result=n*2\nprit("Result:"+str(result))',
 		"expected_output": 'Result:2 Result:4 Result:6',
 		"required_vars": ["n","result"]
 	}
@@ -293,8 +292,11 @@ func _on_http_request_completed(result: int, response_code: int, headers: Packed
 # ---------------------------------------------------------------------
 
 func _normalize_output(text: String) -> String:
-	return text.strip_edges().replace("\n", " ").replace("\r", " ").replace("  ", " ").to_lower()
-
+	var t = text.to_lower()
+	t = t.replace("\r", " ").replace("\n", " ").strip_edges()
+	var parts: Array = t.split(" ", true) 
+	t = "".join(parts) 
+	return t
 # ---------------------------------------------------------------------
 
 func _on_skip_pressed() -> void:

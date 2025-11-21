@@ -452,12 +452,12 @@ radius = 25.0
 height = 66.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tkv7t"]
-radius = 171.04678
+radius = 127.06297
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3xp5"]
-radius = 189.16924
+radius = 181.02486
 
-[node name="FirstFloorBoss" type="Node2D"]
+[node name="FirstFloorBoss" type="Node2D" groups=["boss"]]
 
 [node name="BossBody" type="CharacterBody2D" parent="."]
 collision_layer = 16

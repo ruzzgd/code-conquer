@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var walking_sound = $walk_sound
 
 # --- Boss Settings ---
+@export var boss_id: String = "boss_lab"  # unique ID per boss for save/load
 @export var movement_speed: float = 50
 @export var attack1_range: float = 80.0
 @export var attack2_range: float = 150.0
@@ -26,6 +27,7 @@ extends CharacterBody2D
 @export var attack3_damage: int = 15
 @export var attack_cooldown: float = 1.0
 @export var missile_cooldown: float = 3.0
+@export var min_safe_distance: float = 50.0  # Boss relocation distance
 
 # --- Boss HP ---
 @onready var boss_hp_bar = $"boss-hp"
@@ -53,11 +55,21 @@ var machine_gun_damage := 0
 var facing_right := true
 
 # --- Boss Mode ---
-enum BossMode { IDLE, PATROL, CHASE, ATTACK }
+enum BossMode { IDLE, PATROL, CHASE, ATTACK, RELOCATE }
 var current_mode: BossMode = BossMode.IDLE
+
+# --- Relocation ---
+var relocating := false
+var relocation_target := Vector2.ZERO
 
 func _ready() -> void:
 	randomize()
+
+	# --- Check if already killed ---
+	if boss_id != "" and SaveSystem.is_boss_killed(boss_id):
+		queue_free()
+		return
+
 	var shape = patrol_area.get_node("CollisionShape2D").shape
 	if shape is CircleShape2D:
 		radius = shape.radius
@@ -85,6 +97,15 @@ func _ready() -> void:
 	walking_sound.volume_db = linear_to_db(SoundSystem.player_volume)
 	SoundSystem.player_volume_changed.connect(_on_sfx_volume_changed)
 
+	# --- Ensure boss disappears on map reload ---
+	if SaveSystem.loaded:
+		_apply_saved_state()
+	else:
+		SaveSystem.save_loaded.connect(_apply_saved_state)
+
+func _apply_saved_state():
+	if boss_id != "" and SaveSystem.is_boss_killed(boss_id):
+		call_deferred("queue_free")
 
 func _on_sfx_volume_changed(new_volume: float) -> void:
 	machine_gun_sound.volume_db = linear_to_db(new_volume)
@@ -92,9 +113,7 @@ func _on_sfx_volume_changed(new_volume: float) -> void:
 	death_sound.volume_db = linear_to_db(new_volume)
 	walking_sound.volume_db = linear_to_db(new_volume)
 
-
 func _physics_process(delta: float) -> void:
-	# 🚫 Do nothing if game not started
 	if not GameManager.is_game_started or is_dying:
 		_stop_all_attacks()
 		return
@@ -110,10 +129,13 @@ func _physics_process(delta: float) -> void:
 	attacking = false
 	var new_mode = BossMode.IDLE
 
-	# Handle Patrol / Attacks / Chase
-	if player_in_range:
+	if player_in_range and not player_in_range.is_dead_state():
 		var distance = global_position.distance_to(player_in_range.global_position)
-		if distance <= attack1_range:
+		# --- Relocate if too close ---
+		if distance < min_safe_distance:
+			_start_relocation()
+			new_mode = BossMode.RELOCATE
+		elif distance <= attack1_range:
 			new_mode = BossMode.ATTACK
 			current_attack = 1
 			attack_timer -= delta
@@ -134,6 +156,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			new_mode = BossMode.CHASE
 			_chase_player(delta)
+	elif current_mode == BossMode.RELOCATE:
+		_move_to_relocation(delta)
 	else:
 		new_mode = BossMode.PATROL
 		_patrol(delta)
@@ -142,10 +166,36 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	_flip_sprites(velocity_smooth)
 
+# --- Relocation ---
+func _start_relocation():
+	if relocating or not player_in_range:
+		return
+	var attempts = 10
+	var dodge_distance = min_safe_distance + 20
+	while attempts > 0:
+		var angle = (player_in_range.global_position - global_position).angle() + randf_range(-PI/2, PI/2)
+		var offset = Vector2(cos(angle), sin(angle)) * dodge_distance
+		var new_pos = player_in_range.global_position + offset
+		if new_pos.distance_to(player_in_range.global_position) > min_safe_distance:
+			relocation_target = new_pos
+			relocating = true
+			break
+		attempts -= 1
 
-# --- Animations + Sound ---
+func _move_to_relocation(delta: float):
+	if not relocating or not player_in_range:
+		relocating = false
+		return
+	var direction = (relocation_target - global_position).normalized()
+	velocity_smooth = velocity_smooth.lerp(direction * movement_speed, 0.2)
+	velocity = velocity_smooth
+	move_and_slide()
+	if global_position.distance_to(relocation_target) < 5:
+		relocating = false
+
+# --- Animations / Sprite Flip ---
 func _update_animation() -> void:
-	if not GameManager.is_game_started or is_dying:
+	if is_dying:
 		_stop_all_attacks()
 		return
 
@@ -164,8 +214,7 @@ func _update_animation() -> void:
 				full_body_anim.speed_scale = 1.0
 				if walking_sound.playing:
 					walking_sound.stop()
-
-		BossMode.CHASE:
+		BossMode.CHASE, BossMode.RELOCATE:
 			full_body_anim.visible = false
 			torso_sprite.visible = true
 			leg_sprite.visible = true
@@ -179,7 +228,6 @@ func _update_animation() -> void:
 				leg_sprite.play("idle")
 				if walking_sound.playing:
 					walking_sound.stop()
-
 		BossMode.ATTACK:
 			full_body_anim.visible = false
 			torso_sprite.visible = true
@@ -197,11 +245,9 @@ func _update_animation() -> void:
 			if walking_sound.playing:
 				walking_sound.stop()
 
-
-# --- Sprite Flip ---
 func _flip_sprites(dir: Vector2) -> void:
 	var flip = false
-	if player_in_range and (current_mode == BossMode.CHASE or current_mode == BossMode.ATTACK):
+	if player_in_range and (current_mode == BossMode.CHASE or current_mode == BossMode.ATTACK or current_mode == BossMode.RELOCATE):
 		flip = player_in_range.global_position.x < global_position.x
 	elif dir.x < 0:
 		flip = true
@@ -212,8 +258,7 @@ func _flip_sprites(dir: Vector2) -> void:
 	leg_sprite.flip_h = flip
 	facing_right = not flip
 
-
-# --- Stop Attacks ---
+# --- Attacks ---
 func _stop_all_attacks():
 	_stop_attack_machine_gun()
 	if flame_thrower_sound.playing:
@@ -223,40 +268,28 @@ func _stop_all_attacks():
 	attacking = false
 	current_attack = 0
 
-
 func _stop_attack_machine_gun():
 	if not machine_gun_timer.is_stopped():
 		machine_gun_timer.stop()
 	if machine_gun_sound.playing:
 		machine_gun_sound.stop()
 
-
-# --- Chase Player ---
 func _chase_player(delta: float):
-	if not GameManager.is_game_started or not player_in_range:
+	if not player_in_range:
 		return
 	var direction = (player_in_range.global_position - global_position).normalized()
 	velocity_smooth = velocity_smooth.lerp(direction * movement_speed, 0.2)
 	velocity = velocity_smooth
 	move_and_slide()
 
-
-# --- Melee / Flamethrower Attack ---
 func _attack_player(damage: int) -> void:
-	if not GameManager.is_game_started or not player_in_range:
-		return
 	if player_in_range.has_method("take_damage"):
 		player_in_range.take_damage(damage)
 	attacking = true
 	if not flame_thrower_sound.playing:
 		flame_thrower_sound.play()
 
-
-# --- Machine Gun ---
 func _fire_machine_gun(damage: int) -> void:
-	if not GameManager.is_game_started or not player_in_range:
-		_stop_attack_machine_gun()
-		return
 	if machine_gun_timer.is_stopped():
 		bullets_left = 3
 		machine_gun_damage = damage
@@ -265,12 +298,10 @@ func _fire_machine_gun(damage: int) -> void:
 			machine_gun_sound.play()
 	attacking = true
 
-
 func _shoot_machine_gun_bullet() -> void:
-	if bullets_left <= 0 or not player_in_range or player_in_range.is_dead_state() or not GameManager.is_game_started:
+	if bullets_left <= 0 or not player_in_range or player_in_range.is_dead_state():
 		_stop_attack_machine_gun()
 		return
-
 	var bullet = machine_gun_scene.instantiate()
 	var muzzle = muzzle_right if facing_right else muzzle_left
 	bullet.global_position = muzzle.global_position
@@ -280,23 +311,17 @@ func _shoot_machine_gun_bullet() -> void:
 	get_tree().current_scene.add_child(bullet)
 	bullets_left -= 1
 
-
-# --- Missile Rain ---
 func _fire_missile_rain() -> void:
-	if not GameManager.is_game_started or not player_in_range:
+	if not player_in_range:
 		return
 	attacking = true
 	torso_sprite.play("attack_3")
 	leg_sprite.play("idle")
-
 	for i in range(6):
 		if not player_in_range or not is_instance_valid(player_in_range):
 			break
 		var missile = missile_scene.instantiate()
-		var hit_player = randf() < 0.5
-		var offset_x = 0.0
-		if not hit_player:
-			offset_x = randf_range(-150, 150)
+		var offset_x = randf_range(-150, 150)
 		missile.global_position = player_in_range.global_position + Vector2(offset_x, -200)
 		missile.attack_damage = attack3_damage
 		missile.target = player_in_range
@@ -304,11 +329,8 @@ func _fire_missile_rain() -> void:
 		await get_tree().create_timer(0.6).timeout
 	attacking = false
 
-
-# --- Patrol ---
+# --- Patrol / Target ---
 func _patrol(delta: float) -> void:
-	if not GameManager.is_game_started:
-		return
 	var to_center = patrol_area.global_position - global_position
 	var desired_direction: Vector2
 	if to_center.length() > radius:
@@ -323,8 +345,6 @@ func _patrol(delta: float) -> void:
 		wait_time = randf_range(1.0, 2.5)
 		_pick_new_target()
 
-
-# --- Target Pick ---
 func _pick_new_target() -> void:
 	while true:
 		var angle = randf() * TAU
@@ -333,7 +353,6 @@ func _pick_new_target() -> void:
 		if (point - patrol_area.global_position).length() <= radius:
 			target_position = point
 			break
-
 
 # --- Boss Life ---
 func take_damage(amount: int) -> void:
@@ -346,14 +365,12 @@ func take_damage(amount: int) -> void:
 	if boss_current_hp <= 0:
 		die()
 
-
 func die() -> void:
 	if is_dying:
 		return
 	is_dying = true
 	_stop_all_attacks()
 	velocity = Vector2.ZERO
-	move_and_slide()
 
 	death_sound.play()
 	torso_sprite.visible = false
@@ -362,12 +379,15 @@ func die() -> void:
 	full_body_anim.play("death")
 	full_body_anim.speed_scale = 1.0
 	full_body_anim.flip_h = not facing_right
-	
-	await full_body_anim.animation_finished
 
+	# --- Save as killed ---
+	if boss_id != "":
+		SaveSystem.mark_boss_killed(boss_id)
+
+	# Spawn core
 	if core_scene:
 		var core_instance = core_scene.instantiate()
 		core_instance.global_position = global_position + Vector2(0, 16)
 		get_tree().current_scene.add_child(core_instance)
-		
+
 	queue_free()

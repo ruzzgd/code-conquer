@@ -216,8 +216,11 @@ func _update_loading_text() -> void:
 
 # ---------------------------------------------------------------------
 func _normalize_output(text: String) -> String:
-	return text.strip_edges().replace("\n", " ").replace("\r", " ").replace("  ", " ").to_lower()
-
+	var t = text.to_lower()
+	t = t.replace("\r", " ").replace("\n", " ").strip_edges()
+	var parts: Array = t.split(" ", true) 
+	t = "".join(parts) 
+	return t
 # ---------------------------------------------------------------------
 
 func _on_http_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:

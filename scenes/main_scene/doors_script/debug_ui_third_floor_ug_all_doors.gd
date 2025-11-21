@@ -23,110 +23,110 @@ var loading_dots: int = 0
 
 var medium_challenges: Array = [
 	{
-		"buggy_code": 'nums = [1,2,3,4]\ntotal=0\nfor n nums\n    if n%2==1\n        total+=n\nprint("Sum:" + totl)',
+		"buggy_code": 'nums = [1,2,3,4]\ntotal = 0\nfor n nums\n    if n % 2 == 1\n        total =+ n\nprint("Sum:" + total)',
 		"expected_output": 'Sum:4',
 		"required_vars": ["nums","total","n"]
 	},
 	{
-		"buggy_code": 'letters=["x","y","z"]\ni=0\nwhile i < len(letters)\n    if letters[i]!="y"\n        print(letters[i])\ni+=1',
-		"expected_output": 'x z',
+		"buggy_code": 'letters = ["a","b","c"]\ni = 0\nwhile i < len(letters)\n    if letters[i] != "b"\n        print(letters[i], end=" ")\n i +=1',
+		"expected_output": 'a c',
 		"required_vars": ["letters","i"]
 	},
 	{
-		"buggy_code": 'values=[5,10,15]\nsum=0\nfor v in values\n    if v>=10\n        sum+=v\nprint("Sum:" + sm)',
-		"expected_output": 'Sum:25',
-		"required_vars": ["values","sum","v"]
-	},
-	{
-		"buggy_code": 'x=2\ny=6\nwhile x<y\n    if x%2==0\n        print("Even:" + x)\n    else\n        print("Odd:" + x)\n    x+=1',
-		"expected_output": 'Even:2 Odd:3 Even:4 Odd:5',
+		"buggy_code": 'x = 1\ny = 5\nwhile x < y\n    if x % 2 == 0\n        print("Even:" + x)\n    else\n        print("Odd:" + x)\n    x = x + 1',
+		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
 		"required_vars": ["x","y"]
 	},
 	{
-		"buggy_code": 'names=["Ann","Bob","Eve"]\ngreeting=""\nfor n names\n    if n=="Bob"\n        greeting+="Hi "+n+" "\n    else\n        greeting+="Hello "+n+" "\nprint(greting)',
-		"expected_output": 'Hello Ann Hi Bob Hello Eve ',
-		"required_vars": ["names","greeting","n"]
+		"buggy_code": 'nums = [2,4,6,8]\ntotal = 0\nfor n nums\n    if n % 2 == 0\n        total =+ n\n    else\n        total += 0\nprint("Sum:" + total)',
+		"expected_output": 'Sum:20',
+		"required_vars": ["nums","total","n"]
 	},
 	{
-		"buggy_code": 'nums=[3,6,9]\nsum=0\nfor n in nums\n    if n>5\n        sum+=n\n    else\n        sum+=0\nprint("Total:" + totl)',
-		"expected_output": 'Total:15',
-		"required_vars": ["nums","sum","n"]
-	},
-	{
-		"buggy_code": 'matrix=[[1,2],[3,4]]\nfor row in matrix:\n    for n in row\n        if n%2==1\n            print("Odd:" + n)\n        else\n            print("Even:" + n)',
-		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
-		"required_vars": ["matrix","row","n"]
-	},
-	{
-		"buggy_code": 'i=0\nwhile i<4\n    if i==2\n        print("Two")\n    else\n        print("Num:" + i)\n    i+=1',
-		"expected_output": 'Num:0 Num:1 Two Num:3',
-		"required_vars": ["i"]
-	},
-	{
-		"buggy_code": 'vals=[7,14,21]\nfor v in vals\n    if v>10\n        print("High:" + v)\n    else\n        print("Low:" + v)',
+		"buggy_code": 'vals = [7,14,21]\nfor v vals\n    if v > 10\n        print("High:" + v)\n    else\n        print("Low:" + v)',
 		"expected_output": 'Low:7 High:14 High:21',
 		"required_vars": ["vals","v"]
 	},
 	{
-		"buggy_code": 'nums=[2,4,6,8]\ntotal=0\nfor n nums\n    if n%2==0\n        total+=n\n    else\n        total+=0\nprint("Sum:" + totl)',
-		"expected_output": 'Sum:20',
+		"buggy_code": 'matrix = [[1,2],[3,4]]\nfor row matrix\n    for n in row\n        if n % 2 == 1\n            print("Odd:" + n)\n        else\n            print("Even:" + n)',
+		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
+		"required_vars": ["matrix","row","n"]
+	},
+	{
+		"buggy_code": 'names = ["Ann","Bob","Eve"]\ngreeting = ""\nfor n names\n    if n == "Bob"\n        greeting += "Hi "+n+" "\n    else\n        greeting += "Hello "+n+" "\nprint(greting)',
+		"expected_output": 'Hello Ann Hi Bob Hello Eve ',
+		"required_vars": ["names","greeting","n"]
+	},
+	{
+		"buggy_code": 'i = 0\nwhile i<4\n    if i==2\n        print("Two")\n    else\n        print("Num:" + i)\n i+=1',
+		"expected_output": 'Num:0 Num:1 Two Num:3',
+		"required_vars": ["i"]
+	},
+	{
+		"buggy_code": 'letters = ["x","y","z"]\nfor l letters\n    if l != "y"\n        print(l)\n    else\n        print("Skipped "+l)',
+		"expected_output": 'x Skipped y z',
+		"required_vars": ["letters","l"]
+	},
+	{
+		"buggy_code": 'nums = [3,6,9]\ntotal = 0\nfor n nums\n    if n > 5\n        total =+ n\n    else\n        total += 0\nprint("Total:" + total)',
+		"expected_output": 'Total:15',
 		"required_vars": ["nums","total","n"]
 	}
 ]
 
-
 var hard_challenges: Array = [
 	{
-		"buggy_code": 'nums=[1,2,3,4,5]\nsum=0\nfor n nums\n    if n%2==0\n        sum+=n\n    else\n        sum+=0\nprint("Sum:" + sm)',
+		"buggy_code": 'nums = [1,2,3,4,5]\nsum_vals = 0\nfor n nums\n    if n % 2 == 0\n        sum_vals =+ n\nprint("Sum:" + sum_vals)',
 		"expected_output": 'Sum:6',
-		"required_vars": ["nums","sum","n"]
+		"required_vars": ["nums","sum_vals","n"]
 	},
 	{
-		"buggy_code": 'matrix=[[1,2,3],[4,5,6]]\nfor r in matrix\n    for n r\n        if n%2==0\n            print("Even:" + n)\n        else\n            print("Odd:" + n)',
+		"buggy_code": 'matrix = [[1,2,3],[4,5,6]]\nfor r matrix\n    for n in r\n        if n%2==0\n            print("Even:" + n)\n        else\n            print("Odd:" + n)',
 		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4 Odd:5 Even:6',
 		"required_vars": ["matrix","r","n"]
 	},
 	{
-		"buggy_code": 'x=1\ny=5\nwhile x<y\n    if x%2==0\n        print("Even:" + x)\n    else\n        print("Odd:" + x)\n    x+=1',
-		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
-		"required_vars": ["x","y"]
-	},
-	{
-		"buggy_code": 'vals=[5,10,15,20]\ntotal=0\nfor v vals\n    if v>10\n        total+=v\n    else\n        total+=0\nprint("Total:" + totl)',
+		"buggy_code": 'vals = [5,10,15,20]\ntotal = 0\nfor v vals\n    if v>10\n        total =+ v\n    else\n        total += 0\nprint("Total:" + total)',
 		"expected_output": 'Total:35',
 		"required_vars": ["vals","total","v"]
 	},
 	{
-		"buggy_code": 'i=0\nwhile i<5\n    if i==3\n        print("Three")\n    else\n        print("Num:" + i)\n    i+=1',
+		"buggy_code": 'i = 0\nwhile i<5\n    if i==3\n        print("Three")\n    else\n        print("Num:" + i)\n i+=1',
 		"expected_output": 'Num:0 Num:1 Num:2 Three Num:4',
 		"required_vars": ["i"]
 	},
 	{
-		"buggy_code": 'names=["Ann","Bob","Eve"]\ngreet=""\nfor n names\n    if n=="Eve"\n        greet+="Hi "+n+" "\n    else\n        greet+="Hello "+n+" "\nprint(gret)',
+		"buggy_code": 'x = 1\ny = 4\nwhile x<=y\n    if x%2==0\n        print("Even:" + x)\n    else\n        print("Odd:" + x)\n x +=1',
+		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
+		"required_vars": ["x","y"]
+	},
+	{
+		"buggy_code": 'names = ["Ann","Bob","Eve"]\ngreet = ""\nfor n names\n    if n=="Eve"\n        greet += "Hi "+n+" "\n    else\n        greet += "Hello "+n+" "\nprint(gret)',
 		"expected_output": 'Hello Ann Hello Bob Hi Eve ',
 		"required_vars": ["names","greet","n"]
 	},
 	{
-		"buggy_code": 'matrix=[[1,2],[3,4]]\nfor r in matrix\n    for n in r\n        if n%2==0\n            print("Even:" + n)\n        else\n            print("Odd:" + n)',
+		"buggy_code": 'matrix = [[1,2],[3,4]]\nfor r matrix\n    for n in r\n        if n%2==0\n            print("Even:" + n)\n        else\n            print("Odd:" + n)',
 		"expected_output": 'Odd:1 Even:2 Odd:3 Even:4',
 		"required_vars": ["matrix","r","n"]
 	},
 	{
-		"buggy_code": 'i=0\nwhile i<4\n    if i==1\n        print("One")\n    else\n        print("Num:" + i)\n    i+=1',
+		"buggy_code": 'nums = [1,2,3,4]\nsum_vals = 0\nfor n nums\n    if n!=2\n        sum_vals += n\n    else\n        sum_vals += 0\nprint("Sum:" + sum_vals)',
+		"expected_output": 'Sum:8',
+		"required_vars": ["nums","sum_vals","n"]
+	},
+	{
+		"buggy_code": 'i = 0\nwhile i<4\n    if i==1\n        print("One")\n    else\n        print("Num:" + i)\n i+=1',
 		"expected_output": 'Num:0 One Num:2 Num:3',
 		"required_vars": ["i"]
 	},
 	{
-		"buggy_code": 'nums=[1,2,3,4]\nsum=0\nfor n nums\n    if n!=2\n        sum+=n\n    else\n        sum+=0\nprint("Sum:" + sm)',
-		"expected_output": 'Sum:8',
-		"required_vars": ["nums","sum","n"]
-	},
-	{
-		"buggy_code": 'vals=[2,4,6,8]\ntotal=0\nfor v in vals\n    if v>=6\n        total+=v\n    else\n        total+=0\nprint("Total:" + totl)',
+		"buggy_code": 'vals = [2,4,6,8]\ntotal = 0\nfor v vals\n    if v>=6\n        total =+ v\n    else\n        total += 0\nprint("Total:" + total)',
 		"expected_output": 'Total:14',
 		"required_vars": ["vals","total","v"]
 	}
 ]
+
 
 
 # Active challenge data
@@ -255,7 +255,7 @@ func _update_loading_text() -> void:
 
 func _on_http_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	loading_timer.stop()  # Stop loading animation
-
+	
 	# If HTTP error or non-200 response
 	if response_code != 200:
 		_show_error_message("❌ Python Error. Code Still Buggy")
@@ -293,7 +293,12 @@ func _on_http_request_completed(result: int, response_code: int, headers: Packed
 # ---------------------------------------------------------------------
 
 func _normalize_output(text: String) -> String:
-	return text.strip_edges().replace("\n", " ").replace("\r", " ").replace("  ", " ").to_lower()
+	var t = text.to_lower()
+	t = t.replace("\r", " ").replace("\n", " ").strip_edges()
+	var parts: Array = t.split(" ", true) 
+	t = "".join(parts) 
+	return t
+
 
 # ---------------------------------------------------------------------
 

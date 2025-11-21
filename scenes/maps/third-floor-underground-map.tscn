@@ -1823,7 +1823,7 @@ tile_map_data = PackedByteArray("AABKAA4AAAAjAAgAAABKAA8AAAAjAAkAAABKABAAAAAjAAk
 tile_set = SubResource("TileSet_yh30l")
 
 [node name="third_floor_spawn_marker_stair" type="Marker2D" parent="."]
-position = Vector2(1144, 84)
+position = Vector2(1143, 75)
 
 [node name="third_floor_stair_door" type="Area2D" parent="."]
 position = Vector2(1141, -122)
@@ -2151,7 +2151,6 @@ scale = Vector2(1.26316, 1.14286)
 texture = SubResource("AtlasTexture_v4rph")
 
 [node name="open-door-texture" type="Sprite2D" parent="vertical-third-floor-six-doorv2"]
-visible = false
 z_index = 5
 position = Vector2(30.25, -49)
 scale = Vector2(1.07143, 1.14286)
@@ -2284,7 +2283,6 @@ position = Vector2(50, -29)
 shape = SubResource("RectangleShape2D_lxrdr")
 
 [node name="ThirdFloorBehindDetector" type="Area2D" parent="."]
-visible = false
 position = Vector2(515, -154)
 collision_mask = 14
 script = ExtResource("13_fiu8p")
@@ -2455,7 +2453,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_02bwi")
 position = Vector2(479, 398)
 
 [node name="mobs" type="Node2D" parent="."]
-visible = false
 
 [node name="DroneMob" parent="mobs" instance=ExtResource("17_dix0o")]
 position = Vector2(819, 95)
@@ -2621,7 +2618,7 @@ note_id = "note4"
 
 [node name="FirstFloorBoss" parent="." instance=ExtResource("23_42xc3")]
 z_index = 10
-position = Vector2(550, 53)
+position = Vector2(552, 82)
 
 [connection signal="body_entered" from="third_floor_stair_door" to="third_floor_stair_door" method="_on_body_entered"]
 [connection signal="child_entered_tree" from="third_floor_stair_door/detector" to="third_floor_stair_door" method="_on_detector_child_entered_tree"]

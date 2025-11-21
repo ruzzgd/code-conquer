@@ -31,16 +31,14 @@ var fade_start_opacity: float = 0.1
 var fade_end_opacity: float = 0.9
 var is_glitching: bool = false
 
-
 func _ready():
-	await get_tree().process_frame # ✅ Ensure SoundSystem is ready before connecting
+	await get_tree().process_frame
 
 	red_overlay.visible = false
 	warning_label.visible = false
 	stuck_label.visible = false
 	red_overlay.modulate.a = min_opacity
 
-	# ✅ Center alignment
 	warning_label.set_anchors_preset(Control.PRESET_CENTER)
 	stuck_label.set_anchors_preset(Control.PRESET_CENTER)
 	warning_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -48,25 +46,24 @@ func _ready():
 	warning_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	stuck_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
-	# Let clicks pass
 	red_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	warning_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	stuck_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	# ✅ Safe connection (avoids duplicate connections)
 	if not SoundSystem.background_volume_changed.is_connected(_on_bgm_volume_changed):
 		SoundSystem.background_volume_changed.connect(_on_bgm_volume_changed)
 
-	# Apply current volume instantly
 	_on_bgm_volume_changed(SoundSystem.background_volume)
-
 	GameManager.game_reset.connect(_on_game_reset)
 
 
-# 🔊 Start escape warning (with looping warning sound)
+# 🔊 Start escape warning
 func start_escape_warning(duration: float = 180.0):
 	if not GameManager.is_game_started:
 		return
+
+	# Disable global saving
+	GameManager.can_save = false
 
 	total_duration = duration
 	elapsed_time = 0.0
@@ -77,7 +74,6 @@ func start_escape_warning(duration: float = 180.0):
 	red_overlay.modulate.a = min_opacity
 	_update_warning_label()
 
-	# Start flicker timer
 	if not flicker_timer:
 		flicker_timer = Timer.new()
 		flicker_timer.one_shot = false
@@ -86,12 +82,10 @@ func start_escape_warning(duration: float = 180.0):
 	flicker_timer.wait_time = flicker_interval
 	flicker_timer.start()
 
-	# 🔊 Start looping warning sound synced with SoundSystem
 	if warning_sound.stream:
 		warning_sound.stop()
 		if warning_sound.stream is AudioStream:
 			warning_sound.stream.loop = true
-		# ✅ Sync with BGM volume
 		warning_sound.volume_db = linear_to_db(SoundSystem.background_volume * 0.8)
 		warning_sound.play()
 
@@ -133,7 +127,6 @@ func _start_final_transition():
 	is_glitching = true
 	transition_elapsed = 0.0
 
-	# Stop warning sound when transition starts
 	if warning_sound.playing:
 		warning_sound.stop()
 
@@ -158,7 +151,6 @@ func _on_transition_tick():
 	var t = clamp(transition_elapsed / transition_duration, 0, 1)
 	red_overlay.modulate.a = lerp(fade_start_opacity, fade_end_opacity, t)
 
-	# Glitch text
 	if randi() % 2 == 0:
 		stuck_label.visible = not stuck_label.visible
 	else:
@@ -206,6 +198,9 @@ func _on_shake_tick():
 
 
 func _stop_warning():
+	# Re-enable global saving when warning stops
+	GameManager.can_save = true
+
 	red_overlay.visible = false
 	warning_label.visible = false
 	stuck_label.visible = false
@@ -217,7 +212,6 @@ func _stop_warning():
 	if shake_timer:
 		shake_timer.stop()
 
-	# 🔇 Stop warning sound
 	if warning_sound.playing:
 		warning_sound.stop()
 
@@ -235,7 +229,7 @@ func _on_game_reset():
 	_stop_warning()
 
 
-# 🎚 Sync with SoundSystem background volume (LIVE)
+# 🎚 Sync with SoundSystem background volume
 func _on_bgm_volume_changed(new_volume: float):
 	if warning_sound and warning_sound.playing:
 		warning_sound.volume_db = linear_to_db(new_volume * 0.8)

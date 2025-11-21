@@ -38,8 +38,8 @@ var is_shooting = false
 var is_dead = false
 
 @export var base_attack_range := 100
-@export var base_attack_damage := 7
-@export var base_attack_speed := 4
+@export var base_attack_damage := 8
+@export var base_attack_speed := 6
 
 var max_health := 200
 var current_health := 200

@@ -20,6 +20,7 @@ load_path = "res://.godot/imported/red-core.png-e96694b589eee520bfe82f39e8a86d74
 atlas = ExtResource("3_o3s7n")
 
 [node name="Red-core" type="Area2D"]
+z_index = 7
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_p6itx")
